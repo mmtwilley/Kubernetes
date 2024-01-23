@@ -1,0 +1,121 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2023-12-21T20:32:31Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: kind-control-plane
+    kubernetes.io/os: linux
+    node-role.kubernetes.io/control-plane: ""
+    node.kubernetes.io/exclude-from-external-load-balancers: ""
+  name: kind-control-plane
+  resourceVersion: "28120"
+  uid: f8088920-1893-4506-a2f2-8db03a3c9145
+spec:
+  podCIDR: 10.244.0.0/24
+  podCIDRs:
+  - 10.244.0.0/24
+  providerID: kind://docker/kind/kind-control-plane
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/control-plane
+status:
+  addresses:
+  - address: 172.18.0.3
+    type: InternalIP
+  - address: kind-control-plane
+    type: Hostname
+  allocatable:
+    cpu: "2"
+    ephemeral-storage: 32847680Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 8120288Ki
+    pods: "110"
+  capacity:
+    cpu: "2"
+    ephemeral-storage: 32847680Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 8120288Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2024-01-17T21:12:28Z"
+    lastTransitionTime: "2023-12-21T20:32:31Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2024-01-17T21:12:28Z"
+    lastTransitionTime: "2023-12-21T20:32:31Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2024-01-17T21:12:28Z"
+    lastTransitionTime: "2023-12-21T20:32:31Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2024-01-17T21:12:28Z"
+    lastTransitionTime: "2023-12-21T20:32:50Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - registry.k8s.io/etcd:3.5.7-0
+    sizeBytes: 101639218
+  - names:
+    - docker.io/library/import-2023-06-15@sha256:0202953c0b15043ca535e81d97f7062240ae66ea044b24378370d6e577782762
+    - registry.k8s.io/kube-apiserver:v1.27.3
+    sizeBytes: 83456511
+  - names:
+    - docker.io/library/import-2023-06-15@sha256:bdbeb95d8a0820cbc385e44f75ed25799ac8961e952ded26aa2a09b3377dfee7
+    - registry.k8s.io/kube-controller-manager:v1.27.3
+    sizeBytes: 74420365
+  - names:
+    - docker.io/library/import-2023-06-15@sha256:ce2145a147b3f1fc440ba15eaa91b879ba9cbf929c8dd8f3190868f4373f2183
+    - registry.k8s.io/kube-proxy:v1.27.3
+    sizeBytes: 72711677
+  - names:
+    - docker.io/library/import-2023-06-15@sha256:9d6f903c0d4bf3b145c7bbc68727251ca1abf98aed7f8d2acb9f6a10ac81e8c2
+    - registry.k8s.io/kube-scheduler:v1.27.3
+    sizeBytes: 59801741
+  - names:
+    - docker.io/kindest/kindnetd:v20230511-dc714da8
+    sizeBytes: 27731571
+  - names:
+    - docker.io/kindest/local-path-provisioner:v20230511-dc714da8
+    sizeBytes: 19351145
+  - names:
+    - registry.k8s.io/coredns/coredns:v1.10.1
+    sizeBytes: 16190758
+  - names:
+    - docker.io/kindest/local-path-helper:v20230510-486859a6
+    sizeBytes: 3052318
+  - names:
+    - registry.k8s.io/pause:3.7
+    sizeBytes: 311278
+  nodeInfo:
+    architecture: amd64
+    bootID: 8a4f1902-aca8-47b8-b5cd-36d6b6a6ade8
+    containerRuntimeVersion: containerd://1.7.1
+    kernelVersion: 6.2.0-1018-azure
+    kubeProxyVersion: v1.27.3
+    kubeletVersion: v1.27.3
+    machineID: 12d863ea586843538375a6b8768b5979
+    operatingSystem: linux
+    osImage: Debian GNU/Linux 11 (bullseye)
+    systemUUID: 3252ebcc-efc6-49ba-9db1-da161f95eeb3
